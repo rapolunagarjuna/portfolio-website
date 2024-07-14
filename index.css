@@ -289,7 +289,9 @@ a {
 }
 
 .project-card-content {
+  height: 100%;
   display: flex;
+  position: relative;
   padding-left: 19px;
   flex-direction: column;
   align-items: flex-start;
@@ -426,8 +428,10 @@ a {
   width: 269px;
   height: 247px;
   position: absolute;
-  left: 5px;
-  bottom: 5px;
+
+  left:0px;
+  bottom: 0px;
+
   border-radius: 0px 0px 0px 36px;
   background: linear-gradient(
       0deg,
@@ -441,8 +445,8 @@ a {
   width: 269px;
   height: 247px;
   position: absolute;
-  left: 5px;
-  bottom: 5px;
+  left:0px;
+  bottom: 0px;
   border-radius: 0px 0px 0px 36px;
   background: url("./assets/real-estate.png") lightgray 100% / cover no-repeat;
 }
@@ -456,7 +460,7 @@ a {
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 18.245px;
+  right: 0px;
   bottom: 20.245px;
   border-radius: 29px;
   background: #c2bcbc;
