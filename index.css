@@ -12,6 +12,7 @@ body {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 a {
@@ -20,10 +21,15 @@ a {
 }
 
 .main-container {
+  width: 100vw;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
   gap: 176px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 .navigation-container {
@@ -33,12 +39,10 @@ a {
   justify-content: flex-end;
   align-items: center;
   gap: 11px;
-  align-self: stretch;
 }
-
 .navigation-item {
   display: flex;
-  padding: 3px 12px;
+  padding: 8px 12px;
   justify-content: center;
   align-items: center;
   align-self: stretch;
@@ -49,6 +53,16 @@ a {
   font-style: normal;
   font-weight: 400;
 }
+.navigation-item:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 1000px) {
+  .navigation-container {
+    display: none;
+  }
+}
 
 .hero-section {
   display: flex;
@@ -56,6 +70,18 @@ a {
   justify-content: center;
   align-items: flex-start;
   gap: 123px;
+}
+
+@media (max-width: 1000px) {
+  .hero-section {
+    flex-direction: column;
+    margin-top: 173px;
+    max-width: 338px;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    text-align: center;
+  }
 }
 
 .profile-image {
@@ -71,7 +97,7 @@ a {
 .intro {
   display: flex;
   width: 423.101px;
-  height: 342.161px;
+  height: fit-content;
   flex-direction: column;
   justify-content: center;
   flex-shrink: 0;
@@ -80,6 +106,22 @@ a {
   font-weight: 400;
   line-height: 33px;
   letter-spacing: 2px;
+}
+
+@media (max-width: 1000px) {
+  .intro {
+    display: flex;
+    width: 328px;
+    height: 176px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px; /* 130% */
+    letter-spacing: 2px;
+  }
 }
 
 .name {
@@ -116,6 +158,53 @@ a {
   margin-left: -350px;
 }
 
+@media (max-width: 1000px) {
+  .sub-heading {
+    color: rgba(208, 201, 201, 0.75);
+    transform: rotate(0deg);
+    margin-left: 0px;
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 25px; /* 52.083% */
+    letter-spacing: 5px;
+  }
+}
+
+.projects-sub-heading {
+  position: absolute;
+  transform: rotate(-90deg);
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: rgba(208, 201, 201, 0.75);
+  text-align: center;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 900;
+  letter-spacing: 5px;
+  height: 25px;
+  margin-left: -300px;
+}
+
+@media (max-width: 1000px) {
+  .projects-sub-heading {
+    color: rgba(208, 201, 201, 0.75);
+    transform: rotate(0deg);
+    margin-left: 0px;
+    position: relative;
+    text-align: center;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 25px; /* 52.083% */
+    letter-spacing: 5px;
+  }
+}
+
 .section {
   position: relative;
   display: flex;
@@ -125,11 +214,19 @@ a {
   gap: 60px;
 }
 
+@media (max-width: 1000px) {
+  .section {
+    flex-direction: column;
+    gap: 40px;
+    width: 338px;
+  }
+}
+
 .experience-item {
   display: flex;
   height: fit-content;
   width: 100%;
-  border-left: #8E8585 3px solid;
+  border-left: #8e8585 3px solid;
   align-items: flex-start;
   gap: 15px;
 }
@@ -170,6 +267,14 @@ a {
   background: rgba(100, 156, 221, 0.75);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+.project-card:hover {
+  background: #284AC1;
+}
+
+.project-card:hover .link-btn {
+  visibility: visible;
+}
+
 .project-card-inside {
   display: flex;
   padding: 19px 18px 5px 5px;
@@ -217,9 +322,34 @@ a {
   letter-spacing: 2px;
 }
 
+@media (max-width: 1000px) {
+  .copyright {
+    color: #000;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px; /* 208.333% */
+    letter-spacing: 2px;
+  }
+  
+}
+
+
+.r-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 1000px) {
+  .r-section {
+    gap: 16px;
+  }
+}
+
 .grid-references {
   display: flex;
-  margin: 24px;
   width: 900px;
   flex-direction: row;
   justify-content: center;
@@ -231,9 +361,20 @@ a {
   flex-wrap: wrap;
 }
 
+
+
+@media (max-width: 1000px) {
+  .grid-references {
+    flex-direction: column;
+    width: 338px;
+    margin: 0px;
+    gap: 16px;
+  }
+}
+
 .reference-card {
   display: flex;
-  width: 351px;
+  width: 338px;
   height: 265px;
   padding: 15px;
   flex-direction: column;
@@ -257,12 +398,28 @@ a {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 1000px) {
+  .contact-container {
+    width: 338px;
+  }
+}
+
 
 .contact-item {
   display: flex;
   width: 331px;
   align-items: center;
   gap: 32px;
+  margin-top: 10px;
+}
+
+.contact-item:hover svg path {
+  fill: black;
+  stroke: white;
+}
+
+.contact-item:hover {
+  cursor: pointer;
 }
 
 .project-image-e-commerce {
@@ -291,6 +448,7 @@ a {
 }
 
 .link-btn {
+  visibility: hidden;
   display: flex;
   width: 33.755px;
   height: 33.755px;
@@ -304,8 +462,49 @@ a {
   background: #c2bcbc;
 }
 
+@media screen and (max-width: 1000px) {
+  .link-btn {
+    visibility: visible;
+  }
+  
+}
+
+
+.contact-margin {
+  margin-left: -280px;
+}
+
+@media (max-width: 1000px) {
+  .contact-margin {
+    margin-left: 0px;
+  }
+}
+
+
+
+/* done */
 .grid-container {
   width: 900px;
+  height: 450px;
+  background: url("./assets/hobbies/collage.png") white 50% / contain
+    no-repeat;
+}
+
+@media (max-width: 1000px) {
+  .grid-container {
+    width: 338px;
+    height: 338px;
+  }
+}
+
+.hobbies-margin {
+  margin-left: -270px;
+}
+
+@media (max-width: 1000px) {
+  .hobbies-margin {
+    margin-left: 0px;
+  }
 }
 
 .company-logo-umass {
@@ -314,13 +513,16 @@ a {
   flex-shrink: 0;
   border-radius: 10px;
   background: url("./assets/companies/umass.jpg") white 50% / contain no-repeat;
+  margin-bottom: 10px;
 }
 .company-logo-mahindra {
   width: 96.154px;
   height: 50px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: url("./assets/companies/mahindra.png") lightgray 50% / contain no-repeat;
+  margin-bottom: 10px;
+  background: url("./assets/companies/mahindra.png") lightgray 50% / contain
+    no-repeat;
 }
 
 .company-logo-mu {
@@ -328,6 +530,7 @@ a {
   height: 50px;
   flex-shrink: 0;
   border-radius: 10px;
+  margin-bottom: 10px;
   background: url("./assets/companies/mu.png") white 50% / contain no-repeat;
 }
 
@@ -336,7 +539,9 @@ a {
   height: 50px;
   flex-shrink: 0;
   border-radius: 10px;
-  background: url("./assets/companies/ksai.png") lightgray 50% / contain no-repeat;
+  background: url("./assets/companies/ksai.png") lightgray 50% / contain
+    no-repeat;
+    margin-bottom: 10px;
 }
 
 .company-logo-fm {
@@ -345,4 +550,53 @@ a {
   flex-shrink: 0;
   border-radius: 10px;
   background: url("./assets/companies/fm.png") white 50% / contain no-repeat;
+  margin-bottom: 10px;
+}
+
+
+.reachout-container {
+  display: flex;
+  margin-top: 5px;
+  align-items: center;
+  gap: 16px;
+}
+@media screen and (max-width: 1000px) {
+  .reachout-container {
+    justify-content: center;
+  }
+
+  .reachout-container svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+
+.reachout-container:hover svg:hover {
+  fill: #242323;
+}
+
+.reachout-container:hover svg:hover path{
+  stroke: white;
+}
+
+
+.projects-section {
+  display: flex;
+  width: 900px;
+  flex-direction: row;
+  justify-content: center;
+  gap: 60px;
+}
+
+@media (max-width: 1000px) {
+  .projects-section {
+    width: fit-content;
+    flex-direction: column;
+    gap: 40px;
+  }
+}
+
+.contact-item:hover a {
+  text-decoration: underline solid #d42e2e 3px;
 }
